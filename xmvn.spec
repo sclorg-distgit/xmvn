@@ -4,7 +4,7 @@
 
 Name:           %{?scl_prefix}%{pkg_name}
 Version:        2.1.1
-Release:        1.20%{?dist}
+Release:        1.21%{?dist}
 Summary:        Local Extensions for Apache Maven
 License:        ASL 2.0
 URL:            http://mizdebsk.fedorapeople.org/xmvn
@@ -217,6 +217,9 @@ cp -r %{_datadir}/maven/lib/* %{buildroot}%{_datadir}/%{pkg_name}/lib/
 
 # possibly recreate symlinks that can be automated with xmvn-subst
 %{pkg_name}-subst %{buildroot}%{_datadir}/%{pkg_name}/
+for jar in `find %{buildroot}%{_datadir}/%{pkg_name}/lib -type f -name 'xmvn-*.jar'`; do
+    ln -sf "%{_javadir}/%{pkg_name}/`basename -s -%{version}.jar $jar`.jar" $jar
+done
 
 # /usr/bin/xmvn script
 echo "#!/bin/sh -e
@@ -300,6 +303,9 @@ cp -P %{_datadir}/maven/bin/m2.conf %{buildroot}%{_datadir}/%{pkg_name}/bin/
 %doc LICENSE NOTICE
 
 %changelog
+* Mon Jan 16 2017 Michael Simacek <msimacek@redhat.com> - 2.1.1-1.21
+- Fix symlink generation
+
 * Tue Oct 11 2016 Mikolaj Izdebski <mizdebsk@redhat.com> - 2.1.1-1.20
 - Resolves: rhbz#1383583
 
