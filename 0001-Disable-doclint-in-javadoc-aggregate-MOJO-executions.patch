@@ -1,7 +1,7 @@
 From b9dc38741887a8daea1f894741c2070c58901752 Mon Sep 17 00:00:00 2001
 From: Mikolaj Izdebski <mizdebsk@redhat.com>
 Date: Thu, 16 Apr 2015 10:18:25 +0200
-Subject: [PATCH 1/4] Disable doclint in javadoc:aggregate MOJO executions
+Subject: [PATCH 1/5] Disable doclint in javadoc:aggregate MOJO executions
 
 Java 8 detection code assumes that toolchains are not in use -- the
 same JDK version is used to run XMvn and generate javadocs.
@@ -69,5 +69,5 @@ index a9cac0e..e6b3e36 100644
  
      @Override
 -- 
-2.5.0
+2.7.4
 

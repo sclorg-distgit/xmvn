@@ -4,7 +4,7 @@
 
 Name:           %{?scl_prefix}%{pkg_name}
 Version:        2.1.1
-Release:        1.19%{?dist}
+Release:        1.20%{?dist}
 Summary:        Local Extensions for Apache Maven
 License:        ASL 2.0
 URL:            http://mizdebsk.fedorapeople.org/xmvn
@@ -17,6 +17,7 @@ Patch0001:      0001-Disable-doclint-in-javadoc-aggregate-MOJO-executions.patch
 Patch0002:      0002-Add-duplicated-ZIP-entry-hack-for-OpenJDK.patch
 Patch0003:      0003-Add-hack-for-forcing-correct-namespace-in-depmap-res.patch
 Patch0004:      0004-Port-to-Modello-1.7.patch
+Patch0005:      0005-Revert-Always-use-default-Ivy-settings.patch
 
 BuildRequires:  %{?scl_prefix}maven
 BuildRequires:  %{?scl_prefix}maven-local
@@ -153,6 +154,7 @@ set -e -x
 %patch0002 -p1
 %patch0003 -p1
 %patch0004 -p1
+%patch0005 -p1
 
 # XXX Disable duplicate metadata enforcing for now
 sed -i /artifactMap.remove/d $(find -name MetadataResolver.java)
@@ -298,6 +300,9 @@ cp -P %{_datadir}/maven/bin/m2.conf %{buildroot}%{_datadir}/%{pkg_name}/bin/
 %doc LICENSE NOTICE
 
 %changelog
+* Tue Oct 11 2016 Mikolaj Izdebski <mizdebsk@redhat.com> - 2.1.1-1.20
+- Resolves: rhbz#1383583
+
 * Mon Feb 08 2016 Michal Srb <msrb@redhat.com> - 2.1.1-1.19
 - Fix BR on maven-local & co.
 

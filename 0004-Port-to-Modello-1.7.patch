@@ -1,7 +1,7 @@
 From 06cbffad8f5609188a788e85991918078d9fca12 Mon Sep 17 00:00:00 2001
 From: Mikolaj Izdebski <mizdebsk@redhat.com>
 Date: Wed, 7 Jan 2015 10:21:15 +0100
-Subject: [PATCH 4/4] Port to Modello 1.7
+Subject: [PATCH 4/5] Port to Modello 1.7
 
 ---
  xmvn-core/pom.xml                                  |    2 -
@@ -8119,5 +8119,5 @@ index 5f7544b..9ed9ff0 100644
      <projectInfoReportsPluginVersion>2.7</projectInfoReportsPluginVersion>
      <resourcesPluginVersion>2.7</resourcesPluginVersion>
 -- 
-2.5.0
+2.7.4
 

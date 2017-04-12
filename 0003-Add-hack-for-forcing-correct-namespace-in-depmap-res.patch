@@ -1,7 +1,7 @@
 From de97042bc5c3eaea30f6f63958e422a05b0290b0 Mon Sep 17 00:00:00 2001
 From: Mikolaj Izdebski <mizdebsk@redhat.com>
 Date: Wed, 17 Dec 2014 23:31:35 +0100
-Subject: [PATCH 3/4] Add hack for forcing correct namespace in depmap resolver
+Subject: [PATCH 3/5] Add hack for forcing correct namespace in depmap resolver
 
 ---
  .../fedoraproject/xmvn/resolver/impl/depmap/DepmapBasedResolver.java | 5 +++++
@@ -24,5 +24,5 @@ index 298b060..8ad228d 100644
                  }
              }
 -- 
-2.5.0
+2.7.4
 
