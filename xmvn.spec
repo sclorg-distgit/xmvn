@@ -13,7 +13,7 @@
 
 Name:           %{?scl_prefix}xmvn
 Version:        3.0.0
-Release:        5.1%{?dist}
+Release:        5.2%{?dist}
 Summary:        Local Extensions for Apache Maven
 License:        ASL 2.0
 URL:            https://fedora-java.github.io/xmvn/
@@ -342,6 +342,9 @@ cp -P ${maven_home}/bin/m2.conf %{buildroot}%{_datadir}/%{pkg_name}/bin/
 %doc LICENSE NOTICE
 
 %changelog
+* Thu Jun 22 2017 Michael Simacek <msimacek@redhat.com> - 3.0.0-5.2
+- Mass rebuild 2017-06-22
+
 * Wed Jun 21 2017 Java Maintainers <java-maint@redhat.com> - 3.0.0-5.1
 - Automated package import and SCL-ization
 
